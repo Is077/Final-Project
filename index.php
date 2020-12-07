@@ -1,5 +1,5 @@
 <?php 
-    ##include 'login.php';
+    include 'login.php';
     $UserEmail['Email'] = "";
     if (isset($_POST['Email'])) $UserEmail['Email'] = htmlspecialchars($_POST['Email']);
 ?>
@@ -39,10 +39,10 @@
                 </div>
                 <button style="margin-bottom:15px;" class="submit-login" name="login" onclick= "return LoginValidation()">Login</button>
               </form>
-              <a style="decoration:none; font-size:15px; color:black;"href = "register.php">Create Account</a>
+              <a style="decoration:none; font-size:15px; color:black;"href = "signup.php">Create Account</a>
             </div>
           </div>
-        <script src="js/index.js"></script>
+        <script src="index.js"></script>
     </body>
     
 </html>

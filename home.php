@@ -1,26 +1,9 @@
-<!-- <?php 
-
-    include 'functions.php';
-    if(!isset($_SESSION["logged_in"])) {
-    header("Location:index.php");
-    }
-
-    //Initialization
-    $UserName['fullName'] = "";
-    $UserPhone['number'] = "";
-    if (isset($_POST['fullName'])) $UserName['fullName'] = htmlspecialchars($_POST['fullName']);
-    if (isset($_POST['number'])) $UserPhone['number'] = htmlspecialchars($_POST['number']);
-    
-?>
- -->
-
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance</title>
+    <title>Home</title>
     <link rel="stylesheet" type="text/css" href="css/style1.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -32,17 +15,18 @@
             <div class="navi-menu">
                 <img src="logo/complogo.png" alt="Company Logo" id="logo">
                 <ul class="main-menu">
-                    <li><span style="font-size:20px;"><p style="color: white;"><?php if(isset($errors['Error_field'])) echo $errors['Error_field'];?></p></span></li>
-                    <li style="margin-left:300px"class="onsite"><a href= "home.html">Home</a></li>
-                    <li><a href= "resources.php">Subjects</a></li>
-                    <li style="margin-left:10px; padding-left:20px; font-size:20px;"><a href="index.php" class="logout"><span style="margin-right:5px; font-size:20px;"class="material-icons"></span>Login/Sign-Up</li>
+                <li><span style="font-size:20px;"><p style="color: white;"><?php if(isset($errors['Error_field'])) echo $errors['Error_field'];?></p></span></li>
+                    <li style="margin-left:300px"class="onsite"><a href= "home.php">Home</a></li>
+                    <li><a href= "management.php">Management</a></li>
+                    <li><a href= "list.php">Student List</a></li>
+                    <li><a href= "retrieve.php">Attendance</a></li>
                 </ul>
             </div>
         </nav>
         <div class="intro">
             <h1><p style="color: white;">Welcome to Smart Kids Learning Center<br>Learning begins here</h1></p>
-            <a class="Bmoved active" href="https://www.youtube.com/watch?v=TgZUHw7kGX0" target="_blank">Be Motivated</a>
-            <a class="Bmoved active" href="https://www.ashesi.edu.gh/academics/30-academics/math-center.html" target="_blank">Math Center</a>
+            <a class="Bmoved active" target="_blank"></a>
+            <a class="Bmoved active" target="_blank"></a>
         </div>
     </header>
     <section class="section-tutors js--section-features">
@@ -82,15 +66,8 @@
             <div class="footer-div ">
                 <section>
                     <h4>Quick Links</h4>
-                    <a href="bookings.php">Bookings</a>
-                    <a href="resources.php">Resources</a>
-                </section>
-                <section>
-                    <h4>Developments</h4>
-                    <div class="media-links">
-                        <a href="https://teamweb2020.wordpress.com/" target="_blank"><i class="fa fa-wordpress"></i></a>
-                        <a href="https://github.com/AshWeb2020/ashweb20-team-team-o" target="_blank"><i class="fa fa-github"></i></a>
-                    </div>
+                    <a href="management.php">Management</a>
+                    <a href="list.php">Student List</a>
                 </section>
             </div> 
             <div class="Copy">

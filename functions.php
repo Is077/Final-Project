@@ -20,7 +20,7 @@ if(isset($_POST['save'])){
 
 
 
-
+  
     if(empty($fname)){
         $errors['Error_fname'] = "Name cannot be blank";
         $errors['Error_field'] = "Input Error: 'A Field is empty'";
@@ -31,20 +31,36 @@ if(isset($_POST['save'])){
         $errors['Error_field'] = "Input Error: 'A Field is empty'";
     }
     
+    if(empty($age)){
+        $errors['Error_age'] = "Age cannot be blank";
+        $errors['Error_field'] = "Input Error: 'A Field is empty'";
+    }
+
+    if(empty($gender)){
+        $errors['Error_gender'] = "Gender cannot be blank";
+        $errors['Error_field'] = "Input Error: 'A Field is empty'";
+    }
+
     if(empty($_date)){
         $errors['Error_date'] = "Pick a date";
         $errors['Error_field'] = "Input Error: 'Date is empty'";
     }
 
+    if(empty($ygroup)){
+        $errors['Error_yg'] = "Year Group cannot be blank";
+        $errors['Error_field'] = "Input Error: 'A Field is empty'";
+    }
 
-        
+
+    
+ //Error handling
     if(count($errors)==0){
         $sql = "INSERT INTO student (fname, lname, age, gender, _date, ygroup) VALUES ('$fname', '$lname', '$age', '$gender', '$_date', '$ygroup')";
         $data_inserted = mysqli_query($connection, $sql);
         if($data_inserted){
-            echo "<script>alert('Successfully Booked a Session'); location.href='management.php';</script> ";
+            echo "<script>alert('Successfully added a Student'); location.href='management.php';</script> ";
         } else{
-            echo "<script>alert('Failed to Book a Session');</script>";
+            echo "<script>alert('Failed to add a Student');</script>";
         }
     }
 
@@ -52,7 +68,7 @@ if(isset($_POST['save'])){
     
 }
 
-
+ // Test connection
     if($connection) {
         return true;
 

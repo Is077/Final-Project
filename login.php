@@ -12,6 +12,8 @@ $errorss = array();
 
 $errors = array();
 
+//Validation
+
 if(isset($_POST['submit'])){
     
     $users_name = $_POST['Username'];
@@ -20,7 +22,7 @@ if(isset($_POST['submit'])){
     $password = password_hash($user_password,PASSWORD_BCRYPT,array("cost"=>12));
     $user_cpassword =$_POST['cpassword'];
 
-    $regex_ashesi_email = '/^[^@]+@[^@]+\.[^@]+$/';
+    $regex_email = '/^[^@]+@[^@]+\.[^@]+$/';
     
     $username_query = "SELECT * FROM login WHERE users_name='$users_name'";
     $usernameCount_result = mysqli_query($connection, $username_query);
@@ -29,15 +31,14 @@ if(isset($_POST['submit'])){
     $usermail_query = "SELECT * FROM login WHERE user_email='$user_email'";
     $usermailCount_result = mysqli_query($connection, $usermail_query);
 
+
     if (empty($users_name)){
         $errors['validate_name'] = "Invalid Username";
     } else if(mysqli_num_rows($usernameCount_result)>0) {
         $errors['validate_name'] = "Username already exists";
     }
-
-
         
-    if(!preg_match($regex_ashesi_email,$user_email)) {
+    if(!preg_match($regex_email,$user_email)) {
         $errors['validate_email'] = "Invalid Mail";
     } 
     
@@ -82,7 +83,7 @@ if(isset($_POST['login'])){
     }
 
 
-
+ // Error handling
     if(count($errors) == 0){
         $sql = "SELECT * FROM login WHERE user_email ='$user_email'";
         $result = mysqli_query($connection,$sql);
@@ -112,7 +113,7 @@ if(isset($_POST['login'])){
 
 
 
-
+ //Test connection
 if($connection) {
     return true;
 

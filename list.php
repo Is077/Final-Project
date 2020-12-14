@@ -14,6 +14,7 @@ $result = mysqli_query($connection,"SELECT * FROM student");
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
+<a href= "Management.php"><p style="text-align:right">Back</a>
   <table>
   
   <tr>
@@ -22,6 +23,7 @@ if (mysqli_num_rows($result) > 0) {
     <td>Last Name</td>
   </tr>
 <?php
+//Initialize
 $i=0;
 while($row = mysqli_fetch_array($result)) {
 ?>

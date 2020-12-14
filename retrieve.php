@@ -2,6 +2,7 @@
 include_once 'functions.php';
 $result = mysqli_query($connection,"SELECT * FROM student");
 ?>
+
 <!DOCTYPE html>
 <html>
  <head>
@@ -14,6 +15,7 @@ $result = mysqli_query($connection,"SELECT * FROM student");
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
+<a href= "update.php">Edit an existing Student</a><a href= "Management.php"><p style="text-align:right">Back</a>
   <table>
   
   <tr>
@@ -27,6 +29,7 @@ if (mysqli_num_rows($result) > 0) {
     <td>Attendance</td>
   </tr>
 <?php
+//Initialization
 $i=0;
 while($row = mysqli_fetch_array($result)) {
 ?>
@@ -44,6 +47,7 @@ while($row = mysqli_fetch_array($result)) {
     <label for="absent">Absent</label><br></td>
 </tr>
 <?php
+//Row increment
 $i++;
 }
 ?>

@@ -10,7 +10,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
-        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
     </head>
 
@@ -42,7 +42,7 @@
               <a style="decoration:none; font-size:15px; color:black;"href = "signup.php">Create Account</a>
             </div>
           </div>
-        <script src="index.js"></script>
+        <script src="js/index.js"></script>
     </body>
     
 </html>

@@ -1,5 +1,6 @@
 <?php 
     include 'login.php';
+    //Check Username and email
     $UserName['Username'] = "";
     if (isset($_POST['Username'])) $UserName['Username'] = htmlspecialchars($_POST['Username']);
     $UserEmail['SignEmail'] = "";
@@ -12,7 +13,7 @@
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sign-Up</title>
-        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
     </head>
 
@@ -51,7 +52,7 @@
               <p style="text-align:center; font-weight:bold; color:black;">Already have an account?<a style="decoration:none; color:grey; float:right;"href = "index.php">Log In</a></p>
             </div>
           </div>
-        <script src="index.js"></script>
+        <script src="js/index.js"></script>
     </body>
     
 </html>
